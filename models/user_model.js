@@ -1,13 +1,14 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// схема для пользователя
-let userSchema = mongoose.Schema({
+// user schema
+const userSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    id: Number,
     firstName: String,
-    lastName: String
+    lastName: String,
 });
 
-// создание модели для пользователя
-let User = mongoose.model('User', userSchema);
+// model for user
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;

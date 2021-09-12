@@ -1,16 +1,13 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// схема для питомника
-let farmSchema = mongoose.Schema({
+// pet farm scheme
+const farmSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    id: Number,
     name: String,
-    created: {
-        type: Date,
-        default: Date.now
-    }
 });
 
-// создание модели для питомника
-let Farm = mongoose.model('Farm', farmSchema);
+// model for farm
+const Farm = mongoose.model('Farm', farmSchema);
 
 module.exports = Farm;

@@ -1,21 +1,22 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// схема для питомца
-let petSchema = mongoose.Schema({
+// pet scheme
+const petSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    id: Number,
     nickName: String,
     age: Number,
-    /*user: {
+    user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User' // ссылка на пользователя
+        ref: 'User' // link for user
     },
     farm: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Farm' // ссылка на питомник
-    }*/
+        ref: 'Farm' // link for pet farm
+    }
 });
 
-// создание модели для питомца
-let Pet = mongoose.model('Pet', petSchema);
+// model for pets
+const Pet = mongoose.model('Pet', petSchema);
 
 module.exports = Pet;
